@@ -1,0 +1,177 @@
+/* --- Container général --- */
+.checkout-page {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.checkout-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* --- Grid principal --- */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+}
+
+/* --- Card ré-utilisable --- */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid #eee;
+  box-shadow: 0 6px 20px rgba(14, 20, 30, 0.04);
+}
+
+/* --- Formulaire --- */
+.checkout-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #222;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+.checkout-form textarea {
+  resize: vertical;
+}
+
+.err {
+  color: #c62828;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+/* --- Payment card --- */
+.payment-card .muted {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* --- Actions --- */
+.actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: #ff4f7b;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- Summary --- */
+.order-summary h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.summary-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-right: 6px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sum-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sum-left img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.sum-meta {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.sum-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sum-qty {
+  font-size: 13px;
+  color: #666;
+}
+
+/* totals */
+.summary-totals {
+  border-top: 1px solid #f1f1f1;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.summary-totals .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.summary-totals .row.total {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* muted text */
+.muted {
+  color: #666;
+  font-size: 14px;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    order: 2;
+  }
+}

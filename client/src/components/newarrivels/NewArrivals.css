@@ -1,0 +1,128 @@
+/* NewArrivals.css - corrigé pour éviter conflits et overflow */
+
+.newarrivals-section {
+  width: 96%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.arrival-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff4f7b;
+  margin: 0;
+}
+
+.badge {
+  background: linear-gradient(90deg, #ffd6df, #ffb8cd);
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #ff4f7b;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ffdce8;
+  color: #ff3a6f;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  display: grid;
+  place-items: center;
+}
+
+/* wrapper masque overflow horizontal pour éviter décalages */
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden; /* important */
+}
+
+/* track: flex horizontal */
+.carousel-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  align-items: flex-start;
+}
+
+/* masquer si conflit global */
+/* .carousel-track::-webkit-scrollbar { height: 6px; }
+.carousel-track::-webkit-scrollbar-thumb { background: linear-gradient(90deg,#ff9db3,#ff4f7b); border-radius: 999px; } */
+.carousel-track::-webkit-scrollbar { display: none; }
+
+/* card */
+.arrival-card {
+  display: block; /* important pour <a> */
+  min-width: 170px;
+  max-width: 180px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.arrival-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.arrival-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+/* corps */
+.arrival-body {
+  padding: 10px;
+}
+
+.arrival-body h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+.price {
+  color: #ff4f7b;
+  font-weight: 700;
+}
+
+/* mobile: show 2 columns look by reducing min-width */
+@media (max-width: 480px) {
+  .arrival-card { min-width: 46%; max-width: 48%; }
+  .arrival-img { height: 110px; }
+  .arrow-btn { width: 34px; height: 34px; font-size: 18px; }
+}
+
+/* safety: avoid global rules overriding our cards */
+.newarrivals-section * { box-sizing: border-box; }

@@ -1,0 +1,185 @@
+/* ---------- header.css (corrigé) ---------- */
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/* Empêche tout débordement horizontal global du header */
+.header-container {
+ position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 1000; /* pour passer devant tout */
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffe4ec; /* Rose très doux */
+  border-bottom: 1px solid #ffd1dc;
+  box-sizing: border-box;
+  overflow-x: hidden; /* IMPORTANT : bloque overflow causant scroll horizontal */
+}
+
+/* --- Barre d'annonce (conteneur) --- */
+.announcement-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #ff7b95 0%, #ff4f7b 100%);
+  color: white;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden; /* IMPORTANT : masque tout ce qui dépasse */
+}
+
+/* Inner : texte qui défile */
+.announcement-inner {
+  display: inline-block;
+  white-space: nowrap;        /* empêche le wrapping du texte */
+  padding-left: 100%;        /* commence hors écran à droite */
+  will-change: transform;
+  animation: slideText 12s linear infinite;
+}
+
+/* Keyframes : translate de 0 -> -100% (défile entièrement sur sa largeur) */
+@keyframes slideText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Petite protection : si l'utilisateur réduit fortement l'écran,
+   on réduit la durée pour ne pas rester bloqué hors-écran trop longtemps */
+@media (max-width: 480px) {
+  .announcement-inner {
+    animation-duration: 9s;
+    padding-left: 80%;
+  }
+}
+
+
+/* --- Header principal --- */
+.header-main {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+}
+
+/* --- Logo --- */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff4f7b;
+  white-space: nowrap;
+}
+
+/* --- Barre de recherche Desktop --- */
+.search-desktop {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 20px;
+}
+.search-desktop input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ff9db3;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.search-desktop input:focus{
+  outline: none;
+}
+
+.search-desktop button {
+  padding: 8px 12px;
+  background: #ff4f7b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- Icônes du header --- */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hnumber{
+  position: absolute;
+  font-size: 13px;
+  top: -5px;
+  right: 5px;
+  border: 1px solid rgb(245, 174, 174);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  background: #ff4f7b;
+  color: white;
+}
+
+/* --- Recherche Mobile (cachée par défaut) --- */
+.search-mobile {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 10px;
+  background: #ffe4ec;
+  border-top: 1px solid #ffd1dc;
+}
+.search-mobile input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ff9db3;
+  border-radius: 6px;
+ 
+}
+
+.search-mobile input:focus{
+  outline: none;
+}
+.search-mobile button {
+  padding: 8px 12px;
+  background: #ff4f7b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- Responsive Rules --- */
+.mobile-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .search-desktop {
+    display: none;
+  }
+  .mobile-only {
+    display: inline-block;
+  }
+}
+
