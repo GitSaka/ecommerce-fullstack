@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CategoryPage.css";
+import "./categorypage.css";
 import { Link, useParams } from "react-router-dom";
 
 const CategoryPage = () => {
