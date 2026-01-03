@@ -6,7 +6,7 @@ import {addToCart} from '../../redux/cartSlice';
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import ProductDescription from "../../components/productdescription/ProductDescription";
+// import ProductDescription from "../../components/productdescription/ProductDescription";
 import ProductDesc from "../../components/productdescription/ProductDesc";
 
 export default function ProductDetails() {
@@ -92,7 +92,7 @@ export default function ProductDetails() {
              ipsum dolor sit amet, consectetur adipiscing elit
              
     `
-
+console.log(cartItems)
   if (!product) {
     return <h2 className="not-found">Produit introuvable</h2>;
   }

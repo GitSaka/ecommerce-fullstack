@@ -2,51 +2,51 @@
 import React, { useState, useEffect } from "react";
 import "./hero.css";
 import { Link } from "react-router-dom";
-import api from "../../admin/services/api";
+// import api from "../../admin/services/api";
 
 export default function Hero() {
 
-  const [slides, setSlides] = useState([]);
-  const imageBaseURL = "http://localhost:5000/uploads/categories/";
-  // const slides = [
-  //   {
-  //     img:
-  //       "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
-  //     title: "Préservatifs Premium",
-  //     text: "Sécurité, douceur et confort pour vos moments intimes.",
-  //     btn: "Découvrir",
-  //   },
-  //   {
-  //     img:
-  //       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
-  //     title: "Lubrifiants Sensuels",
-  //     text: "Améliorez le plaisir avec nos lubrifiants doux et naturels.",
-  //     btn: "Voir la collection",
-  //   },
-  //   {
-  //     img:
-  //       "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
-  //     title: "Accessoires Intimes",
-  //     text: "Pimentez vos moments avec des produits premium.",
-  //     btn: "Explorer",
-  //   },
-  // ];
+  // const [slides, setSlides] = useState([]);
+  // const imageBaseURL = "http://localhost:5000/uploads/categories/";
+  const slides = [
+    {
+      img:
+        "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+      title: "Préservatifs Premium",
+      text: "Sécurité, douceur et confort pour vos moments intimes.",
+      btn: "Découvrir",
+    },
+    {
+      img:
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
+      title: "Lubrifiants Sensuels",
+      text: "Améliorez le plaisir avec nos lubrifiants doux et naturels.",
+      btn: "Voir la collection",
+    },
+    {
+      img:
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
+      title: "Accessoires Intimes",
+      text: "Pimentez vos moments avec des produits premium.",
+      btn: "Explorer",
+    },
+  ];
 
   const [index, setIndex] = useState(0);
 
-  useEffect(()=>{
-        const getAllcathe = async()=>{
-            try {
-                const res = await api.get('/categories');
-                setSlides(res.data)
-                console.log(res.data)
-            } catch (error) {
-                console.log(error)
-            }
-        }
+  // useEffect(()=>{
+  //       const getAllcathe = async()=>{
+  //           try {
+  //               const res = await api.get('/categories');
+  //               setSlides(res.data)
+  //               console.log(res.data)
+  //           } catch (error) {
+  //               console.log(error)
+  //           }
+  //       }
 
-        getAllcathe();
-    },[])
+  //       getAllcathe();
+  //   },[])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,16 +68,16 @@ export default function Hero() {
           className={`slide ${i === index ? "active" : ""}`}
           aria-hidden={i === index ? "false" : "true"}
         >
-          <img src={imageBaseURL+slide.image} alt={slide.name} />
+          <img src={slide.img} alt={slide.title} />
           <div className="overlay" />
           <div className="content">
-            <h1>{slide.name}</h1>
+            <h1>{slide.title}</h1>
             <p>
-              {slide.description.length > 100
-                ? slide.description.slice(0, 200) + "..."
-                : slide.description}
+              {slide.text.length > 100
+                ? slide.text.slice(0, 200) + "..."
+                : slide.text}
             </p>
-            <Link to={"/category/"+slide.name} className="link-no-style">
+            <Link to={"/category/"+slide.title} className="link-no-style">
               <button className="cta">Voir plus</button>
             </Link>
           </div>

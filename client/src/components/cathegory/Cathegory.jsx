@@ -1,7 +1,7 @@
 import { useRef} from "react";
 import './cathegory.css' 
 import { Link } from "react-router-dom";
-import { productsData } from "../../data";
+import { productsDataca } from "../../data";
 // import api from "../../admin/services/api";
 
 export default function Category() {
@@ -47,7 +47,7 @@ export default function Category() {
             <button className="arrow left" onClick={scrollLeft}>‹</button>
 
             <div className="carousel" ref={carouselRef}>
-                {productsData.map(item => (
+                {productsDataca.map(item => (
                     <Link key={item.id} to={`/category/${item.id}`} className="link-no-style">
                     <div className="card" >
                         <img src={item.image} alt={item.name} />
