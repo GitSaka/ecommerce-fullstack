@@ -287,9 +287,29 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
+
+  .product-descriptionl {
+  width: 90%;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 auto;
+}
   .reviews-section {
     padding: 20px;
+    
+    width: 90%;
+    
   }
+  .similar-products {
+   width: 90%;
+ }
+
+ .similar-grid {
+  gap: 19px;
+}
 
   .review-header h4 {
     font-size: 15px;
@@ -299,7 +319,7 @@
 .similar-products {
     width: 70%;
     margin: 5px auto;
-  margin-top: 35px;
+    margin-top: 35px;
 }
 
 .similar-title {

@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 const AdminGuestRoute = ({ children }) => {
-  const token = localStorage.getItem("adminToken");
+  const token = true;
 
   // 👉 Si déjà connecté → redirection dashboard
   if (token) {

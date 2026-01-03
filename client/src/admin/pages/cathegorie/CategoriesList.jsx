@@ -1,40 +1,40 @@
-import { useEffect, useState } from "react";
+// import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import api from "../../services/api";
+// import api from "../../services/api";
 
-// const categories = [
-//   {
-//     id: 1,
-//     name: "Préservatifs",
-//     slug: "preservatifs",
-//     image: "https://via.placeholder.com/60",
-//     is_active: 1,
-//   },
-//   {
-//     id: 2,
-//     name: "Lubrifiants",
-//     slug: "lubrifiants",
-//     image: "https://via.placeholder.com/60",
-//     is_active: 0,
-//   },
-// ];
+const categories = [
+  {
+    id: 1,
+    name: "Préservatifs",
+    slug: "preservatifs",
+    image: "https://via.placeholder.com/60",
+    is_active: 1,
+  },
+  {
+    id: 2,
+    name: "Lubrifiants",
+    slug: "lubrifiants",
+    image: "https://via.placeholder.com/60",
+    is_active: 0,
+  },
+];
 
 export default function CategoriesList() {
-  const [categories,setCathegories] = useState([]);
-  const imageBaseURL = "http://localhost:5000/uploads/categories/";
+  // const [categories,setCathegories] = useState([]);
+  // const imageBaseURL = "http://localhost:5000/uploads/categories/";
 
-  useEffect(()=>{
-    const getAllcategorie = async()=>{
-      try {
-          const res = await api.get("/categories") 
-          setCathegories(res.data)
-          console.log(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getAllcategorie();
-  },[])
+  // useEffect(()=>{
+  //   const getAllcategorie = async()=>{
+  //     try {
+  //         const res = await api.get("/categories") 
+  //         setCathegories(res.data)
+  //         console.log(res.data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   getAllcategorie();
+  // },[])
   return (
     <div className="p-6">
       {/* HEADER */}
@@ -71,7 +71,7 @@ export default function CategoriesList() {
                 {/* IMAGE */}
                 <td className="p-3">
                   <img
-                    src={imageBaseURL+cat.image}
+                    src={cat.image}
                     alt={cat.name}
                     className="w-12 h-12 rounded object-cover"
                   />
