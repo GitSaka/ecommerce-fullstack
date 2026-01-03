@@ -21,11 +21,18 @@
   transition: 0.4s ease;
 }
 
+.avatarcontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .avatar {
+  background-color: green;
   width: 95px;
   height: 95px;
   border-radius: 50%;
   margin-bottom: 20px;
+  
 }
 
 .name {

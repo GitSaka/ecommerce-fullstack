@@ -19,8 +19,8 @@ export const productsData = [
     name: "T-shirt Adidas Performance",
     price: 12000,
     brand: "Adidas",
-    image: "http://localhost:5173/1.jpeg",
-    image2: "http://localhost:5173/2.jpeg",
+    image: "http://localhost:5173/2.jpeg",
+    image2: "http://localhost:5173/1.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:
       "T-shirt respirant idéal pour le sport, fabriqué avec la technologie Aeroready.",
@@ -33,8 +33,8 @@ export const productsData = [
     name: "Casquette Puma Classic",
     price: 7000,
     brand: "Puma",
-    image: "http://localhost:5173/1.jpeg",
-    image2: "http://localhost:5173/2.jpeg",
+    image: "http://localhost:5173/3.jpeg",
+    image2: "http://localhost:5173/1.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:
       "Casquette moderne et élégante pour compléter votre style quotidien.",
@@ -61,7 +61,7 @@ export const productsData = [
     name: "Sac à main Gucci Élégance",
     price: 150000,
     brand: "Gucci",
-    image: "http://localhost:5173/1.jpeg",
+    image: "http://localhost:5173/4.jpeg",
     image2: "http://localhost:5173/2.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:
@@ -75,7 +75,7 @@ export const productsData = [
     name: "Montre Rolex Silver Edition",
     price: 320000,
     brand: "Rolex",
-    image: "http://localhost:5173/1.jpeg",
+    image: "http://localhost:5173/5.jpeg",
     image2: "http://localhost:5173/2.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:
@@ -89,7 +89,7 @@ export const productsData = [
     name: "Chaussure Adidas Run Fast",
     price: 29000,
     brand: "Adidas",
-    image: "http://localhost:5173/1.jpeg",
+    image: "http://localhost:5173/6.jpeg",
     image2: "http://localhost:5173/2.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:
@@ -103,7 +103,7 @@ export const productsData = [
     name: "T-shirt Nike Sport Pro",
     price: 10000,
     brand: "Nike",
-   image: "http://localhost:5173/1.jpeg",
+   image: "http://localhost:5173/7.jpeg",
     image2: "http://localhost:5173/2.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:
@@ -117,7 +117,7 @@ export const productsData = [
     name: "Polo Lacoste Original",
     price: 22000,
     brand: "Lacoste",
-    image: "http://localhost:5173/1.jpeg",
+    image: "http://localhost:5173/8.jpeg",
     image2: "http://localhost:5173/2.jpeg",
     image3: "http://localhost:5173/3.jpeg",
     description:

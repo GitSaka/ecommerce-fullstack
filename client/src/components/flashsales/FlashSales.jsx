@@ -85,7 +85,7 @@ export default function FlashSales() {
       {/* Grid produits */}
       <div className="flash-grid">
         {products.map((item) => (
-          <Link key={item.id}    className="link-no-style">
+          <Link key={item.id}  to={`/product/${item.id}`}  className="link-no-style">
           <div className="flash-card" >
             <div className="discount">-{item.discount}%</div>
 

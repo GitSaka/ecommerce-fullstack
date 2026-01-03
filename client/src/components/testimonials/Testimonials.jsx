@@ -39,19 +39,21 @@ export default function Testimonials() {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [index]);
+  }, [next]);
 
   return (
     <div className="testimonials-container">
       <h2 className="title">Avis de nos Clients</h2>
 
       <div className="testimonial-card">
-        <img
-          src={testimonials[index].image}
-          alt="client"
-          className="avatar"
-        />
-
+      <div className="avatarcontainer">
+             <img
+                src={testimonials[index].image}
+                alt="client"
+                className="avatar"
+              />
+      </div>
+        
         <h3 className="name">{testimonials[index].name}</h3>
         <p className="role">{testimonials[index].role}</p>
 

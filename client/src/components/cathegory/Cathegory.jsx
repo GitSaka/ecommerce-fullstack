@@ -1,10 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef} from "react";
 import './cathegory.css' 
 import { Link } from "react-router-dom";
-import api from "../../admin/services/api";
+import { productsData } from "../../data";
+// import api from "../../admin/services/api";
 
 export default function Category() {
    const carouselRef = useRef(null);
+
+//    const items = [
+//     { id: 1, name: "iPhone 14", brand: "apple", price: 620000, isNew: true },
+//     { id: 2, name: "Samsung S22", brand: "samsung", price: 450000, isNew: false },
+//     { id: 3, name: "Tecno Spark 10", brand: "tecno", price: 90000, isNew: true },
+//     { id: 4, name: "Infinix Note 30", brand: "infinix", price: 120000, isNew: false },
+//     { id: 5, name: "Infinix Note 30", brand: "infinix", price: 120000, isNew: false },
+//     { id: 6, name: "Infinix Note 30", brand: "infinix", price: 120000, isNew: false },
+//     { id: 7, name: "Infinix Note 30", brand: "infinix", price: 120000, isNew: false },
+//   ];
 
     const scrollLeft = () => {
         carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -13,33 +24,33 @@ export default function Category() {
     const scrollRight = () => {
         carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
     };
-     const [items,setItems] = useState([]);
-     const imageBaseURL = "http://localhost:5000/uploads/categories/";
+    //  const [items,setItems] = useState([]);
+    //  const imageBaseURL = "http://localhost:5000/uploads/categories/";
     
 
-    useEffect(()=>{
-        const getAllcathe = async()=>{
-            try {
-                const res = await api.get('/categories');
-                setItems(res.data)
-                console.log(res.data)
-            } catch (error) {
-                console.log(error)
-            }
-        }
+    // useEffect(()=>{
+    //     const getAllcathe = async()=>{
+    //         try {
+    //             const res = await api.get('/categories');
+    //             setItems(res.data)
+    //             console.log(res.data)
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //     }
 
-        getAllcathe();
-    },[])
+    //     getAllcathe();
+    // },[])
 
     return (
         <div className="carousel-container">
             <button className="arrow left" onClick={scrollLeft}>‹</button>
 
             <div className="carousel" ref={carouselRef}>
-                {items.map(item => (
-                    <Link key={item.id} to={`/category/${item.slug}`} className="link-no-style">
+                {productsData.map(item => (
+                    <Link key={item.id} to={`/category/${item.id}`} className="link-no-style">
                     <div className="card" >
-                        <img src={imageBaseURL+item.image} alt={item.name} />
+                        <img src={item.image} alt={item.name} />
                         <p>{item.name}</p>
                     </div>
                     </Link>

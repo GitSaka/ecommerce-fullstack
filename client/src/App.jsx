@@ -19,12 +19,14 @@ import AuthLayout from "./layout/AuthLayout"
 import AdminLogin from "./admin/pages/AdminLogin"
 import AdminRoutes from "./admin/AdminRoutes"
 import Inscription from "./pages/inscription/Inscription"
+import ScrollToTop from "./components/ScrollToTop"
 
 
 
 export default function App() {
   return (
     <>
+    <ScrollToTop />
     <ToastContainer position="top-right" autoClose={2500} />
       <Routes>
 
